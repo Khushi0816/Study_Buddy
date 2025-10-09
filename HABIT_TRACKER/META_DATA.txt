@@ -1,0 +1,39 @@
+NAME:
+PROJECT IDEA: HABIT TRACKER
+PROJECT TYPE: MINOR PROJECT
+MAIN AUTHOR: SHEETAL SINGH
+COLLABORATOR : KHUSHI SINGH
+TECH-STACK:
+PURPOSE:
+MAIN-DIRECTORIES:
+  -habit-tracker/
+│
+├── server/                # Backend (Node.js + Express + MongoDB)
+│   ├── src/
+│   │   ├── config/        # Database connection, environment configs
+│   │   ├── controllers/   # Route logic (auth, habits, logs, analytics)
+│   │   ├── middleware/    # JWT auth, error handlers
+│   │   ├── models/        # Mongoose schemas (User, Habit, HabitLog)
+│   │   ├── routes/        # Express routes
+│   │   ├── utils/         # Helper functions (streak calc, timezone)
+│   │   └── index.js       # App entry (express setup)
+│   │
+│   ├── package.json
+│   └── .env               # Secrets (DB URI, JWT secret)
+│
+├── client/                # Frontend (React)
+│   ├── src/
+│   │   ├── api/           # Axios instance
+│   │   ├── components/    # Reusable components (Navbar, Charts, HabitCard)
+│   │   ├── pages/         # Screens (Login, Signup, Dashboard, Analytics)
+│   │   ├── context/       # Auth context / global state
+│   │   ├── hooks/         # Custom hooks (e.g. useAuth)
+│   │   ├── styles/        # Tailwind / custom CSS
+│   │   ├── App.js         # Routes setup
+│   │   └── main.jsx       # React entry point
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── .gitignore
+└── README.md

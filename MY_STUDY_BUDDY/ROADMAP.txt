@@ -1,0 +1,271 @@
+Perfect 👍 Let’s make this **absolute beginner style roadmap** for your **AI Study Buddy** project.
+
+You’ll get:
+✅ Step-by-step daily plan (install → code → test → connect)
+✅ Project folder structure (root)
+✅ Learning resources (best free ones for each step)
+
+---
+
+# 🧠 Beginner Roadmap (30 Days, \~2 hrs/day)
+
+---
+
+## 🟢 **Week 1: Setup & React Basics**
+
+### **Day 1–2: Setup**
+
+* Install:
+
+  * [Node.js (LTS)](https://nodejs.org/en/download)
+  * [VS Code](https://code.visualstudio.com/)
+  * Git (optional, for version control)
+
+* Make your first React app:
+
+  ```bash
+  npm create vite@latest study-buddy --template react
+  cd study-buddy
+  npm install
+  npm run dev
+  ```
+
+📚 Resources:
+
+* [React + Vite Crash Course](https://www.youtube.com/watch?v=0fYi8SGA20k)
+* [Node.js install guide](https://www.youtube.com/watch?v=ENrzD9HAZK4)
+
+---
+
+### **Day 3–4: React Fundamentals**
+
+* Learn JSX (HTML in React)
+* Learn Components & Props
+* Learn `useState` (store variables)
+
+Build:
+✅ A `Hello World` React component
+✅ A button that counts clicks
+
+📚 Resource: [React Official Docs (Learn section)](https://react.dev/learn)
+
+---
+
+### **Day 5–6: Tailwind CSS**
+
+* Install Tailwind:
+
+  ```bash
+  npm install -D tailwindcss postcss autoprefixer
+  npx tailwindcss init -p
+  ```
+* Configure `tailwind.config.js`
+* Add Tailwind classes in `index.css`
+
+Build:
+✅ A styled button & card component
+
+📚 Resource: [Tailwind Crash Course](https://www.youtube.com/watch?v=UBOj6rqRUME)
+
+---
+
+### **Day 7: Routing**
+
+* Install React Router:
+
+  ```bash
+  npm install react-router-dom
+  ```
+* Add pages:
+
+  * `/upload`
+  * `/flashcards`
+  * `/dashboard`
+
+📚 Resource: [React Router Quickstart](https://reactrouter.com/en/main/start/tutorial)
+
+---
+
+---
+
+## 🟡 **Week 2: Backend Basics with n8n + OpenAI**
+
+### **Day 8–9: APIs + JSON**
+
+* Learn what an API is
+* Learn JSON request/response
+
+📚 Resources:
+
+* [JSON Crash Course](https://www.youtube.com/watch?v=iiADhChRriM)
+* [REST API for Beginners](https://www.youtube.com/watch?v=Q-BpqyOT3a8)
+
+---
+
+### **Day 10–11: OpenAI API**
+
+* Create OpenAI account
+* Get API key
+* Test simple call with `curl` or Postman
+
+Example:
+
+```bash
+curl https://api.openai.com/v1/chat/completions \
+-H "Content-Type: application/json" \
+-H "Authorization: Bearer YOUR_API_KEY" \
+-d '{
+  "model": "gpt-4o-mini",
+  "messages": [{"role": "user", "content": "Make 5 flashcards about OS"}]
+}'
+```
+
+📚 Resource: [OpenAI API Docs](https://platform.openai.com/docs/quickstart)
+
+---
+
+### **Day 12–14: n8n Workflows**
+
+* Install n8n:
+
+  ```bash
+  npm install n8n -g
+  n8n
+  ```
+* Create workflow:
+  Input text → OpenAI → Output flashcards
+
+📚 Resources:
+
+* [n8n Basics YouTube](https://www.youtube.com/watch?v=JsMzKPGzUJU)
+* [n8n Docs](https://docs.n8n.io/)
+
+---
+
+---
+
+## 🔵 **Week 3: Database (MongoDB) + FastAPI**
+
+### **Day 15–16: MongoDB Basics**
+
+* Create free MongoDB Atlas account
+* Learn `insertOne`, `find`
+
+📚 Resource: [MongoDB FreeCodeCamp](https://www.youtube.com/watch?v=-56x56UppqQ)
+
+---
+
+### **Day 17–18: Connect n8n → MongoDB**
+
+* Use MongoDB node in n8n
+* Store flashcards with schema:
+
+  ```json
+  {
+    "question": "What is an OS?",
+    "answer": "An operating system manages hardware and software.",
+    "reviewDate": "2025-09-10"
+  }
+  ```
+
+---
+
+### **Day 19–20: FastAPI for File Upload**
+
+* Install Python + FastAPI:
+
+  ```bash
+  pip install fastapi uvicorn pydantic python-multipart
+  ```
+* Create `main.py`:
+
+  ```python
+  from fastapi import FastAPI, UploadFile
+  import fitz  # PyMuPDF
+
+  app = FastAPI()
+
+  @app.post("/upload")
+  async def upload(file: UploadFile):
+      text = ""
+      with fitz.open(stream=await file.read(), filetype="pdf") as doc:
+          for page in doc:
+              text += page.get_text()
+      return {"content": text}
+  ```
+
+📚 Resource: [FastAPI Crash Course](https://www.youtube.com/watch?v=0sOvCWFmrtA)
+
+---
+
+---
+
+## 🔴 **Week 4: Advanced Features + Deployment**
+
+### **Day 21–23: Frontend Features**
+
+* Flashcard UI (flip on click/space)
+* Quiz page (MCQs)
+* Pomodoro Timer (React `useEffect`)
+
+📚 Resource: [React Pomodoro](https://www.youtube.com/watch?v=V-_O7nl0Ii0)
+
+---
+
+### **Day 24–25: Dashboard**
+
+* Install Chart.js:
+
+  ```bash
+  npm install react-chartjs-2 chart.js
+  ```
+* Build a review progress chart
+
+📚 Resource: [Chart.js Docs](https://react-chartjs-2.js.org/)
+
+---
+
+### **Day 26–28: SM-2 Scheduling**
+
+* Add fields in MongoDB: `ease`, `interval`, `nextReview`
+* Update based on correct/wrong answers
+
+📚 Resource: [SM-2 Algorithm Explained](https://www.supermemo.com/en/archives1990-2015/english/ol/sm2)
+
+---
+
+### **Day 29–30: Deployment**
+
+* Frontend → Vercel
+* Backend → Railway/Render
+* n8n → self-hosted / Railway
+
+📚 Resources:
+
+* [Deploy React to Vercel](https://vercel.com/docs)
+* [Deploy FastAPI to Railway](https://docs.railway.app/deploy/fastapi)
+
+---
+
+# 📂 Project Root (Suggested)
+
+```
+study-buddy/
+│── frontend/       # React + Tailwind
+│   ├── src/
+│   │   ├── pages/ (Upload, Flashcards, Quiz, Dashboard)
+│   │   ├── components/ (Card, Timer, Chart)
+│   │   └── App.jsx
+│── backend/        # FastAPI
+│   ├── main.py
+│── workflows/      # n8n exports
+│── db/             # MongoDB schema notes
+│── README.md
+```
+
+---
+
+⚡ So Khushi, here’s my suggestion:
+👉 Start with **React basics this week (Week 1)**, since that’s the easiest way to build confidence.
+
+Would you like me to make a **Notion template/board** for this roadmap so you can check off daily tasks?

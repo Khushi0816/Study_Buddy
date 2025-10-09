@@ -1,0 +1,91 @@
+Got it 👍 You want **Notion-style day-by-day checklists** for **both projects** so you can follow them like a daily planner.
+
+I’ll give you **two roadmaps in checklist form** (✅ style). You can copy-paste into Notion or Trello as a board.
+
+---
+
+# 📒 **Notion Checklist — AI Study Buddy**
+
+### **Week 1: Setup & Basics**
+
+* [ ] Install Node.js, VS Code, Git
+* [ ] Create React app with Vite
+* [ ] Install Tailwind CSS and set up styling
+* [ ] Learn JSX, props, useState
+* [ ] Build a counter button component
+* [ ] Install React Router and add pages: Upload, Flashcards, Dashboard
+
+### **Week 2: Backend & AI**
+
+* [ ] Learn JSON + APIs basics
+* [ ] Test OpenAI API with curl/Postman
+* [ ] Install n8n locally
+* [ ] Build workflow: Input text → OpenAI → output flashcards
+* [ ] Store flashcards in MongoDB Atlas (n8n → MongoDB node)
+
+### **Week 3: React UI**
+
+* [ ] Upload Page (send file/text to backend)
+* [ ] Flashcards UI (flip card, mark correct/wrong)
+* [ ] Quiz Page (MCQ from flashcards)
+* [ ] Dashboard (progress stats with Chart.js)
+* [ ] Style with Tailwind
+
+### **Week 4: Extras & Deploy**
+
+* [ ] Add Pomodoro Timer (React useEffect)
+* [ ] Implement SM-2 spaced repetition scheduling
+* [ ] Connect all workflows end-to-end
+* [ ] Deploy frontend → Vercel
+* [ ] Deploy backend → Railway
+* [ ] Self-host n8n or connect to backend
+
+---
+
+# 📒 **Notion Checklist — Habit Tracker**
+
+### **Week 1: Setup & React Basics**
+
+* [ ] Install Node.js, VS Code, Git
+* [ ] Create React app with Vite
+* [ ] Install Tailwind CSS
+* [ ] Learn JSX, props, useState
+* [ ] Build Login, Signup, Habits, Analytics pages
+* [ ] Add React Router for navigation
+
+### **Week 2: Backend (FastAPI + MongoDB)**
+
+* [ ] Install Python, FastAPI, Uvicorn
+* [ ] Create `/auth/signup` route (store user in MongoDB)
+* [ ] Create `/auth/login` with JWT token
+* [ ] Create `/habits/` routes (CRUD)
+* [ ] Test API with Postman
+* [ ] Connect MongoDB Atlas to backend
+
+### **Week 3: Frontend Integration**
+
+* [ ] Connect login/signup forms with backend
+* [ ] Store JWT in localStorage
+* [ ] Create habit form → send to backend
+* [ ] List all habits in UI
+* [ ] Add "Mark Done/Skip" button (POST log to backend)
+* [ ] Implement streak calculation in backend
+
+### **Week 4: Analytics + Deployment**
+
+* [ ] Add Chart.js for weekly/monthly views
+* [ ] Add heatmap calendar (Cal-Heatmap)
+* [ ] Implement timezone-aware logging (`pytz`)
+* [ ] Deploy backend → Railway/Render
+* [ ] Deploy frontend → Vercel
+* [ ] Final testing with sample users
+
+---
+
+⚡ How to use in Notion:
+
+1. Make a **board view** or **table view**.
+2. Add columns: **To Do | In Progress | Done**.
+3. Copy-paste checklist tasks → drag as you finish.
+
+---
