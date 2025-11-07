@@ -22,8 +22,8 @@
     width: 40px; /* Adjust size as needed */
     height: auto;
     /* Position it above and slightly centered over "Habit" */
-    top: -20px;   /* Move up from its normal position */
-    left: 10px;  /* Adjust left/right to center it */
+    top: -5px;   /* Move up from its normal position */
+    left: 40px;  /* Adjust left/right to center it */
     /* You might need to fine-tune 'top' and 'left' values based on your font and exact icon. */
 }
 
