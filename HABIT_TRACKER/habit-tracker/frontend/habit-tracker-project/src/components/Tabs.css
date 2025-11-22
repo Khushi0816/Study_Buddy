@@ -1,0 +1,28 @@
+.tabs {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+}
+
+.tabs button {
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  background: #f8dcdc;
+  cursor: pointer;
+  font-size: 0.9rem;
+}
+
+.tabs .active {
+  background: #ffe8e8;
+  border: 1px solid #e5a1a1;
+  font-weight: 600;
+}
+
+.add-btn {
+  margin-left: auto;
+  background: #a4d46f;
+  color: white;
+  font-weight: bold;
+}
