@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import HabitBloomLogo from '../components/HabitBloomLogo';
-import Tabs from '../components/Tabs';
-import WeekHeader from "../components/WeekHeader";
-import DaysOfWeek from '../components/DaysOfWeek';
-import HabitRow from '../components/HabitRow';
-import TodayGoals from '../components/TodayGoals';
+import HabitBloomLogo from '../components/Weeks/HabitBloomLogo';
+import Tabs from '../components/Weeks/Tabs';
+import WeekHeader from "../components/Weeks/WeekHeader";
+import DaysOfWeek from '../components/Weeks/DaysOfWeek';
+import HabitRow from '../components/Weeks/HabitRow';
+import TodayGoals from '../components/Weeks/TodayGoals';
 import heart from '../assets/heart.svg';
 
 export default function WeekView() {

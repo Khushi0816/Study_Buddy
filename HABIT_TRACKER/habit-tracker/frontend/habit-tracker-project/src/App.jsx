@@ -1,6 +1,6 @@
 import React from 'react'
 import { Routes, Route } from 'react-router-dom'
-import Header from './components/Header'
+import Header from './components/Weeks/Header'
 import Home from './pages/Home'
 import WeekView from './pages/WeekView'
 import MonthView from './pages/MonthView'

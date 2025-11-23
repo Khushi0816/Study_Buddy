@@ -1,7 +1,7 @@
 import React from 'react'
-import Tabs from '../components/Tabs'
-import HabitGrid from '../components/HabitGrid'
-import TodayGoals from '../components/TodayGoals'
+import Tabs from '../components/Weeks/Tabs'
+import HabitGrid from '../components/Weeks/HabitGrid'
+import TodayGoals from '../components/Weeks/TodayGoals'
 
 
 export default function Home(){
