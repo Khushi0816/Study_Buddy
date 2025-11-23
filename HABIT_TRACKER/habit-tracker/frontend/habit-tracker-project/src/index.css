@@ -1,1 +1,47 @@
-@import "tailwindcss";
+/* src/index.css - global styles */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Poppins:wght@600;700&family=Pacifico&display=swap');
+
+:root{
+  --cream: #FFF7F8; /* FFF7F8 */
+  --pink:  #F2C2CE; /* F2C2CE */
+  --pink-2:#FDE8E8; /* FDE8E8 */
+  --lime:  #BDCE62; /* BDCE62 */
+  --mint:  #A0C888; /* A0C888 */
+  --plum:  #4B3240; /* deep title color */
+  --muted: #6b6b6b;
+  --card-radius: 14px;
+}
+
+/* Reset / base */
+* { box-sizing: border-box; }
+html,body,#root { height: 100%; }
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--plum);
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* small utility */
+.row { display:flex; align-items:center; gap:12px; }
+.card {
+  background: white;
+  border-radius: var(--card-radius);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+}
+.small-muted { color: var(--muted); font-size: 13px; }
+.app-wrapper {
+  max-width: 980px;       /* <— PERFECT Figma width */
+  margin: 0 auto;
+  padding: 0 16px;
+}

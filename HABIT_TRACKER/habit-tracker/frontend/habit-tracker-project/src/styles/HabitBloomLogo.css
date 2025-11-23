@@ -1,0 +1,36 @@
+
+.habit-bloom-logo {
+    font-family: 'Dancing Script', cursive; 
+    font-size: 36px;
+    font-weight: 700;
+    display: flex; /* Keeps "Habit" and "Bloom" side-by-side */
+    align-items: flex-end; /* Aligns the baseline of the text */
+    /* Add some padding-top to ensure space for the icon if it goes above the text line */
+    padding-top: 15px; 
+}
+
+.habit-with-icon {
+    position: relative; /* This is crucial: children can be absolutely positioned relative to this */
+    display: flex; /* Allows 'Habit' span to stay next to the icon, though icon is absolute */
+    align-items: flex-end; /* Align the text baseline within this wrapper */
+    margin-right: 5px; /* Space between "Habit" and "Bloom" */
+}
+
+.logo-icon {
+    position: absolute; /* Take the icon out of the normal flow */
+    width: 40px; /* Adjust size as needed */
+    height: auto;
+    /* Position it above and slightly centered over "Habit" */
+    top: -5px;   /* Move up from its normal position */
+    left: 40px;  /* Adjust left/right to center it */
+    /* You might need to fine-tune 'top' and 'left' values based on your font and exact icon. */
+}
+
+.logo-part-habit {
+    color: #f7a4b8; /* Soft pink */
+    /* No margin-right here, as it's handled by .habit-with-icon */
+}
+
+.logo-part-bloom {
+    color: #8cc63f; /* Bright green */
+}

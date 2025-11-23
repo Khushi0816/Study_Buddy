@@ -1,0 +1,336 @@
+/* --------------------------------------------------------
+   WEEK PAGE — FINAL PIXEL PERFECT Figma Version
+---------------------------------------------------------*/
+
+/* 🌸 COLOR VARIABLES */
+:root {
+  --pink: #FDE8E8;
+  --pink-soft: #FAD5DF;
+  --pink-pill: #F8DADF;
+  --pink-dark: #F6D6DC;
+
+  --lime: #BDCE62;
+  --green: #A0C888;
+
+  --plum: #4B3240;
+  --mint: #A0C888;
+
+  --ivory: #FFF7F8;
+}
+
+/* --------------------------------------------------------
+   HEADER
+---------------------------------------------------------*/
+
+.header-wrap {
+  padding-top: 0;
+  padding-bottom: 10px;
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  padding: 12px 18px;
+  height: 72px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.06);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.header-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--plum);
+}
+
+.header-sub {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--green);
+  margin-top: -2px;
+}
+
+.add-habit-btn {
+  background: var(--lime);
+  color: white;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.header-emoji {
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  background: var(--pink-soft);
+  display: grid;
+  place-items: center;
+  margin-left: 8px;
+  font-size: 20px;
+}
+
+/* --------------------------------------------------------
+   TABS
+---------------------------------------------------------*/
+
+.tabs {
+  display: flex;
+  gap: 14px;
+  margin: 8px 0 14px 0;
+}
+
+.tab {
+  background: var(--pink-pill);
+  padding: 6px 22px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  color: var(--plum);
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.tab:hover {
+  transform: translateY(-2px);
+}
+
+.tab.active {
+  background: var(--pink-dark);
+  font-weight: 700;
+}
+
+/* --------------------------------------------------------
+   PAGE GRID LAYOUT
+---------------------------------------------------------*/
+
+.page-grid {
+  display: flex;
+  gap: 45px;
+  justify-content: flex-start;
+  margin-top: 10px;
+}
+
+.page-left {
+  width: 530px;
+  min-width: 530px;
+}
+
+.page-right {
+  width: 250px;
+}
+
+/* --------------------------------------------------------
+   WEEK NAVIGATION
+---------------------------------------------------------*/
+
+.week-nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: var(--plum);
+}
+
+.week-nav button {
+  background: white;
+  border: none;
+  font-size: 18px;
+  padding: 4px 10px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* --------------------------------------------------------
+   DAYS ROW
+---------------------------------------------------------*/
+
+.days-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  color: var(--plum);
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+/* --------------------------------------------------------
+   HABIT ROW + GRID
+---------------------------------------------------------*/
+
+.habit-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.habit-title {
+  font-family: "Inter", sans-serif;
+  color: var(--plum);
+  font-size: 16px;
+}
+
+/* heart grid */
+.habit-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 30px);
+  gap: 6px;
+}
+
+/* heart button */
+.heart-btn {
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  background: var(--pink-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  transition: 0.15s ease;
+}
+
+.heart-btn:hover {
+  transform: translateY(-2px);
+}
+
+.heart-btn img {
+  width: 18px;
+  height: 18px;
+}
+
+/* states */
+.heart-state-0 {
+  background: var(--pink-soft);
+}
+
+.heart-state-1 {
+  background: var(--pink-soft);
+  box-shadow: 0 6px 14px rgba(255, 110, 150, 0.25);
+}
+
+.heart-state-2 {
+  background: var(--pink-soft);
+  box-shadow: 0 6px 14px rgba(255, 110, 150, 0.25);
+}
+
+/* --------------------------------------------------------
+   TODAY GOALS SIDEBAR
+---------------------------------------------------------*/
+
+.today-card {
+  background: white;
+  padding: 18px;
+  border-radius: 18px;
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.08);
+}
+
+.today-title {
+  font-family: "Poppins";
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 14px;
+}
+
+.goal-item {
+  background: var(--pink-dark);
+  padding: 14px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.goal-item div:first-child {
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.goal-status {
+  padding: 4px 12px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 700;
+  color: white;
+}
+
+.status-done {
+  background: var(--lime);
+}
+
+.status-pending {
+  background: var(--green);
+}
+
+/* --------------------------------------------------------
+   PROGRESS BAR
+---------------------------------------------------------*/
+
+/* Progress Wrapper */
+.progress-wrapper {
+  width: 240px;
+  margin-top: 10px;
+  margin-bottom: 18px;
+}
+
+/* Track */
+.progress-track {
+  width: 100%;
+  height: 18px;
+  background: #fde8e8; /* soft pink background */
+  border-radius: 999px;
+  position: relative;
+  overflow: visible;
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.06);
+}
+
+/* Filled portion */
+.progress-fill {
+  height: 100%;
+  border-radius: inherit;
+  transition: width 300ms ease, background 240ms ease;
+}
+
+/* Flower knob */
+.progress-flower {
+  width: 34px;
+  height: 34px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: left 300ms ease;
+  pointer-events: none;
+}
+
+
+/* --------------------------------------------------------
+   RESPONSIVE
+---------------------------------------------------------*/
+
+@media (max-width: 900px) {
+  .page-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .page-left,
+  .page-right {
+    width: 100%;
+  }
+}

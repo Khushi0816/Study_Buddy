@@ -1,26 +1,43 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import "../../styles/week.css";
 
-export default function Tabs({ activeTab, setActiveTab }) {
-	const tabs = ["week", "month", "notes"];
-	const toPath = (t) => `/${t}`;
+export default function Tabs() {
+  const loc = useLocation();
+  const active =
+    loc.pathname === "/month"
+      ? "month"
+      : loc.pathname === "/notes"
+      ? "notes"
+      : "week";
 
-	return (
-		<div className="flex gap-3 mt-4">
-			{tabs.map((t) => (
-				<NavLink
-					key={t}
-					to={toPath(t)}
-					onClick={() => setActiveTab && setActiveTab(t)}
-					className={({ isActive }) =>
-						`px-4 py-1 rounded-full text-sm capitalize shadow-sm transition-all ${
-							isActive ? 'bg-pink-200 text-pink-700' : 'bg-white'
-						}`
-					}
-				>
-					{t}
-				</NavLink>
-			))}
-		</div>
-	);
+  return (
+    <>
+      <div className="hb-hello">
+        Hey there, Bloom <span className="hb-flower">🌸</span>
+      </div>
+
+      <div className="hb-tabs-row">
+        <div className="tabs">
+          <Link to="/" className={`tab ${active === "week" ? "active" : ""}`}>
+            Week
+          </Link>
+          <Link
+            to="/month"
+            className={`tab ${active === "month" ? "active" : ""}`}
+          >
+            Month
+          </Link>
+          <Link
+            to="/notes"
+            className={`tab ${active === "notes" ? "active" : ""}`}
+          >
+            Notes
+          </Link>
+        </div>
+
+        <button className="add-habit-small">+ Add Habit</button>
+      </div>
+    </>
+  );
 }

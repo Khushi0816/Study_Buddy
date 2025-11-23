@@ -1,5 +1,5 @@
 import React from 'react';
-import './HabitBloomLogo.css';
+import '../../styles/HabitBloomLogo.css';
 
 
 function HabitBloomLogo() {
