@@ -1,3 +1,4 @@
+import React from 'react'; // Add this line
 import WeekHeader from "./WeekHeader";
 import DaysRow from "./DaysRow";
 import HabitRow from "./HabitRow";

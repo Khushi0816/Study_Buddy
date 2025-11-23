@@ -1,32 +1,22 @@
-import "./Tabs.css";
+import React from 'react';
 
-function Tabs({ activeTab, setActiveTab }) {
-  return (
-    <div className="tabs">
-      <button
-        className={activeTab === "week" ? "active" : ""}
-        onClick={() => setActiveTab("week")}
-      >
-        Week
-      </button>
 
-      <button
-        className={activeTab === "month" ? "active" : ""}
-        onClick={() => setActiveTab("month")}
-      >
-        Month
-      </button>
+export default function Tabs({ activeTab, setActiveTab }) {
+const tabs = ["week", "month", "notes"];
 
-      <button
-        className={activeTab === "notes" ? "active" : ""}
-        onClick={() => setActiveTab("notes")}
-      >
-        Notes
-      </button>
 
-      <button className="add-btn">+ Add Habit</button>
-    </div>
-  );
+return (
+<div className="flex gap-3 mt-4">
+{tabs.map((t) => (
+<button
+key={t}
+onClick={() => setActiveTab(t)}
+className={`px-4 py-1 rounded-full text-sm capitalize shadow-sm transition-all
+${activeTab === t ? "bg-pink-200 text-pink-700" : "bg-white"}`}
+>
+{t}
+</button>
+))}
+</div>
+);
 }
-
-export default Tabs;
