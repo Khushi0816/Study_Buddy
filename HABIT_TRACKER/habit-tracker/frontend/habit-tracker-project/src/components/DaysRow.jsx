@@ -1,3 +1,5 @@
+import React from 'react'; // Add this line
+
 export default function DaysRow() {
   const days = ["Mon", "Tues", "Wed", "Thurs", "Fri", "Sat", "Sun"];
 

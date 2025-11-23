@@ -1,28 +1,32 @@
-import { useState } from "react";
-import Heading from './components/HabitBloomLogo';
-import Header from "./components/Header";
-import Tabs from "./components/Tabs";
-import WeekPage from "./components/week/WeekPage";
+import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Header from './components/Header'
+import Home from './pages/Home'
+import WeekView from './pages/WeekView'
+import MonthView from './pages/MonthView'
+import Notes from './pages/Notes'
+import AddHabit from './pages/AddHabit'
+import Profile from './pages/Profile'
+import Dashboard from './pages/Dashboard'
+import Auth from './pages/Auth'
 
 
-function App() {
-const [activeTab, setActiveTab] = useState("week");
-  return (
-    <>
-     <Heading />
-     <Header />
-     <Tabs activeTab={activeTab} setActiveTab={setActiveTab} />
-
-      {/* PAGE CONTENT WILL CHANGE BASED ON TAB */}
-      {activeTab === "week" && <WeekPage />}
-      {activeTab === "month" && <div>Month Page UI here</div>}
-      {activeTab === "notes" && <div>Notes UI here</div>}
-      <div className="text-4xl text-pink-500 font-bold">
-  Tailwind is working!
+export default function App(){
+return (
+<div className="min-h-screen">
+<Header />
+<main className="max-w-7xl mx-auto px-6 py-8">
+<Routes>
+<Route path="/" element={<Home/>} />
+<Route path="/week" element={<WeekView/>} />
+<Route path="/month" element={<MonthView/>} />
+<Route path="/notes" element={<Notes/>} />
+<Route path="/add" element={<AddHabit/>} />
+<Route path="/profile" element={<Profile/>} />
+<Route path="/dashboard" element={<Dashboard/>} />
+<Route path="/auth/*" element={<Auth/>} />
+</Routes>
+</main>
 </div>
-
-    </>
-  );
+)
 }
-
-export default App;
