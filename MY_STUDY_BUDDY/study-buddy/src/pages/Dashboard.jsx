@@ -1,24 +1,32 @@
-import PomodoroCard from "../components/PomodoroMini";
+import Navbar from "../components/NavBar";
 import NotesPanel from "../components/NotesPanel";
-import PdfUploader from "../components/ImportantNotes";
-import FlashcardsPreview from "../components/FlashcardBox";
+import FlashcardBox from "../components/FlashcardBox";
+import PomodoroMini from "../components/PomodoroMini";
+import UploadNotes from "../components/UploadCard";
 
-export default function Dashboard() {
+
+export default function Dashboard(){
   return (
-    <div className="min-h-screen bg-[#05080f] p-6 space-y-6">
+    <div className="min-h-screen">
+      <Navbar />
+      <main className="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* left: notes */}
+        <section className="lg:col-span-4">
+          <NotesPanel />
+        </section>
 
-      {/* Top Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <PomodoroCard />
-        <PdfUploader />
-      </div>
+        {/* center: flashcards */}
+        <section className="lg:col-span-5">
+          <FlashcardBox />
+        </section>
 
-      {/* Bottom Section */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        <NotesPanel />
-        <FlashcardsPreview />
-      </div>
-
+        {/* right: pomodoro + important notes */}
+        <aside className="lg:col-span-3 flex flex-col gap-4">
+          <PomodoroMini />
+          <UploadNotes />
+          {/* <ImportantNotes /> */}
+        </aside>
+      </main>
     </div>
   );
 }

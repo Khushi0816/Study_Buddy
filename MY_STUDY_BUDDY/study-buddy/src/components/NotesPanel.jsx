@@ -1,55 +1,33 @@
-import { useState } from "react";
+import React from "react";
 
-export default function NotesPanel() {
-  const [title, setTitle] = useState("");
-  const [text, setText] = useState("");
-  const [notes, setNotes] = useState([]);
+const sampleNotes = [
+  { id: 1, name: "Biology_Chapter_1.pdf", summaries: 2, cards: 15 },
+  { id: 2, name: "HistoryUnit2.pdf", summaries: 1, cards: 8 },
+  { id: 3, name: "LiteratureTextbook.pdf", summaries: 0, cards: 12 },
+  { id: 4, name: "Physics_Notes.pdf", summaries: 4, cards: 20 }
+];
 
-  const saveNote = () => {
-    if (!title.trim() || !text.trim()) return;
-    setNotes([{ title, text, date: "Today" }, ...notes]);
-    setTitle("");
-    setText("");
-  };
-
+export default function NotesPanel(){
   return (
-    <div className="bg-[#0d1117] p-6 rounded-2xl w-full shadow-xl border border-gray-700">
+    <div className="card p-6">
       <div className="flex justify-between items-center mb-4">
-        <h2 className="text-xl font-semibold text-pink-400">Notes</h2>
+        <h3 className="text-xl font-header">Notes</h3>
+        <button className="text-sm text-white/80">+ Add</button>
       </div>
 
-      <input
-        className="w-full bg-[#161b22] text-white p-3 rounded-xl mb-3 outline-none"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-      />
+      <div className="mb-4">
+        <input className="w-full bg-transparent border border-white/6 rounded-lg p-3 placeholder-white/60" placeholder="Search notes" />
+      </div>
 
-      <textarea
-        className="w-full bg-[#161b22] text-white p-3 rounded-xl mb-3 h-28 outline-none resize-none"
-        placeholder="Write a quick note or paste text..."
-        value={text}
-        onChange={(e) => setText(e.target.value)}
-      />
-
-      <button
-        onClick={saveNote}
-        className="bg-pink-500 px-6 py-2 rounded-xl text-white font-medium hover:bg-pink-600 transition"
-      >
-        Save
-      </button>
-
-      <div className="mt-6 space-y-3">
-        {notes.map((n, i) => (
-          <div
-            key={i}
-            className="bg-[#161b22] p-4 rounded-xl border border-gray-700"
-          >
-            <div className="flex justify-between">
-              <h3 className="text-white font-semibold">{n.title}</h3>
-              <p className="text-gray-400 text-sm">{n.date}</p>
+      <div className="space-y-3 max-h-[60vh] overflow-auto pr-2">
+        {sampleNotes.map(n => (
+          <div key={n.id} className="flex items-center gap-4 p-3 bg-white/2 rounded-lg border border-white/4 on-hover: border- #9333EA/4 cursor-pointer">
+            <div className="h-10 w-10 rounded-md bg-gradient-to-br from-[#6b21a8] to-[#9333EA] flex items-center justify-center text-white font-bold">PDF</div>
+            <div className="flex-1">
+              <div className="font-semibold">{n.name}</div>
+              <div className="text-sm small-muted">{n.summaries} summaries · {n.cards} flashcards</div>
             </div>
-            <p className="text-gray-300 text-sm mt-1">{n.text.slice(0, 80)}...</p>
+            <div className="text-sm text-white/70">Today</div>
           </div>
         ))}
       </div>

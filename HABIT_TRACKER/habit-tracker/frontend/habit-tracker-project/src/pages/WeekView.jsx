@@ -39,7 +39,7 @@ export default function WeekView() {
         <HabitRow name="Habit 4" heart={heart} />
       </div>
 
-      {/* Today's Goal (floating right) */}
+      {/* Today's Goal */}
       <div className="flex justify-end mt-10">
         <TodayGoals />
       </div>
